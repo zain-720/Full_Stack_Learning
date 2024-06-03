@@ -1,0 +1,158 @@
+<h1>Chapter 3: intermediate HTML learning</h1>
+<hr />
+
+
+<h2>The List Element 3.0</h2>
+
+<br />
+<h3>Unordered List</h3>
+<p> Use &lt;ul&gt;   &lt;/ul&gt; to set up the list. <br /> <br /> In between we use 
+&lt;li&gt; &lt;/li&gt; to set up each element within the list</p> 
+
+<br /> For example : <br /> 
+
+<p> 
+    &lt;ul&gt; 
+    <br /> &nbsp; &lt;li&gt;Cool&lt;/li&gt; 
+    <br /> &nbsp; &lt;li&gt;Math&lt;/li&gt; 
+    <br /> &nbsp; &lt;li&gt;Games&lt;/li&gt;
+    <br /> &lt;/ul&gt;
+</p>
+
+Will become 
+
+<ul>
+    <li>Cool</li>
+    <li>Math</li>
+    <li>Games</li>
+</ul>
+
+<br />
+
+<h3>Ordered List</h3>
+<p> Use &lt;ol&gt;   &lt;/ol&gt; to set up the list. <br /> <br /> In between we use 
+    &lt;li&gt; &lt;/li&gt; to set up each element within the list</p> 
+    
+    <br /> For example : <br /> 
+    
+    <p> 
+        &lt;ol&gt; 
+        <br /> &nbsp; &lt;li&gt;Cool&lt;/li&gt; 
+        <br /> &nbsp; &lt;li&gt;Math&lt;/li&gt; 
+        <br /> &nbsp; &lt;li&gt;Games&lt;/li&gt;
+        <br /> &lt;/ol&gt;
+    </p>
+
+    Will become 
+
+<ol>
+    <li>Cool</li>
+    <li>Math</li>
+    <li>Games</li>
+</ol>
+
+<br />
+<hr />
+
+
+<h2> Nesting and identation 3.1</h2>
+
+Example list within a list : <br />
+
+<p> 
+    &lt;ul&gt; 
+    <br /> &nbsp; &lt;li&gt;Cool&lt;/li&gt; 
+    <br /> &nbsp; &lt;li&gt;Math&lt;/li&gt; 
+    <br /> &nbsp; &lt;ol&gt;
+    <br /> &nbsp; &nbsp; &lt;li&gt;Addition&lt;/li&gt;
+    <br /> &nbsp; &nbsp; &lt;li&gt;Subraction&lt;/li&gt;
+    <br /> &nbsp; &nbsp; &lt;li&gt;Multiplication&lt;/li&gt;
+    <br /> &nbsp; &lt;/ol&gt;
+    <br /> &nbsp; &lt;li&gt;Games&lt;/li&gt;
+    <br /> &lt;/ul&gt;
+</p>
+
+We get 
+
+<ul>
+    <li>Cool</li>
+    <li>Math</li>
+    <ol>
+        <li>Addition</li>
+        <li>Subtraction</li>
+        <li>Multiplication</li>
+    </ol>
+    <li>Games</li>
+</ul>
+
+Can use ordered and unordered lists for this
+
+<br />
+<hr />
+
+
+<h2> Anchor Elements 3.2 </h2>
+
+Below is what an anchor element looks like, they let up put hyperlinks in 
+
+<p> 
+    &nbsp; &lt;tag attribute=value anotherattribute=value &gt;Content&lt;/tag&gt; can have more than one attribute
+    <br /><br /> &nbsp; &lt;a href="https://www.google.ca/webhp"&gt;This is a google link&lt;/a&gt; (href)
+    holds URL hyperlink points to
+</p>
+
+Which gives 
+<a href="https://www.google.ca/webhp">This is a google link</a>
+
+<br /> <br />
+We have more local and global attributes other than that within the following links
+<br />
+<ol start="5">
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">Basic attributes</a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">Global attributes</a></li>
+</ol>
+
+Example of a <u>global attribute</u>
+
+<p> 
+    &nbsp; &lt;a draggable=true &gt;<u>This text is draggable</u>&lt;/a&gt; : Makes the link draggable
+</p>
+
+Which creates this draggable text : 
+<a draggable="true"><u>This text is draggable</u></a>
+
+<br />
+<hr />
+
+
+<h2> Image Elements 3.3 </h2>
+
+This is what the image element looks like
+
+<p> 
+    &nbsp; &lt;img src="url" alt="backup text" /&gt; : Inserts an image <br />
+    <ul>
+        <li>src : src tells the image element what the source of the image is</li>
+        <li>url : the location of the image</li>
+        <li>alt : gives alternative text description</li>
+        <li> This is also a void element</li>
+    </ul>
+</p>
+
+This image element holds a link to a photo of Lebron's game 7 block
+
+<p> 
+    &nbsp; &lt;img src="https://www.mercurynews.com/wp-content/uploads/2016/08/20160628__LEBRON-BLOCK1.jpg?w=1024" alt="Lebron game 7 block/&gt;
+</p>
+
+Which produces this photo <br />
+
+<img src="https://www.mercurynews.com/wp-content/uploads/2016/08/20160628__LEBRON-BLOCK1.jpg?w=1024" alt="Lebron game 7 block"/>
+
+<br />
+<hr />
+
+
+<h2> [Project] Birthday invite 3.4 </h2>
+
+Project on seperate HTML file, everything from the project is already within this though. 
