@@ -1,13 +1,84 @@
-<h1>Chapter 5: Intro to CSS</h1>
-<hr />
+<!DOCTYPE html>
+<html lang="en" style="background: burlywood;" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link 
+        rel="stylesheet" 
+        href="./5_1_AddingCSS/Solution/style.css" 
+    /> 
+    <!--Goes to a css file that will change the color of all 
+    h1 text (not their background) (External)-->
+    <style>
+        h2 {
+            color: blue;
+        }
+    </style>
+    <!--Changes text color for all h2 text (Internal)-->
 
-<h2>How to add CSS 5.1</h2>
-<br />
+    <title>Chapter5</title>
+</head>
+
+<body>
+
+    <h1>Chapter 5: Intro to CSS</h1>
+    <hr />
+
+    <h2>How to add CSS 5.1</h2>
+    <br />
 
 
-<p></p>
+    <p>Three ways to add CSS into an HTML file</p>
+
+    <ul>
+        <li> Inline: &lt;tag style="css" /&gt;</li>
+        <li> Internal: &lt;style&gt;css&lt;/style&gt; </li>
+        <li> External: &lt;link href="style.css"/&gt; </li>
+    </ul>
+
+    <h3>Inline</h3>
+
+    <p>Goes into the same line as a particular HMTL element</p>
+    EX: On the HTML boilerplate <br />
+    <ul>
+        <li>&lt;html&gt;style="background: blurlywood"&lt;/html&gt;</li>
+    </ul>
+    <p>style attribute takes in CSS code here to change the background color. Best for single elements.
+        Does not get overwrote by a following external or internal CSS prompt </p>
+    <br />
+
+    <h3>Internal</h3>
+
+    <p>Goes into the head of a boilderplate EX (all within head section)</p>
+    <ul>
+        <li>&lt;style&gt;html{ background: red; } &lt;/style&gt;</li>
+    </ul>
+    <p>All of the space within the style tag can be used for CSS. Useful for limiting style
+        to the specific HTML file it is located within. Best for single HTML pages
+    </p>
+    <br />
+
+    <h3>External</h3>
+
+    <p>Goes into the head of a boilderplate EX (all within head section)</p>
+    <ul>
+        <li>&lt;link rel="stylesheet" href="./styles.css" /&gt;</li>
+    </ul>
+    <p>A the link element would access a CSS file named styles.css would contain the css rules (in this ex: html{ background: green;}).
+        This lets css code be added onto multiple HMTL files faster. (rel defines the relationship to the file being linked to).
+    </p>
+    This is the most commonly used type of CSS coding 
+    <br />
+
+    <hr />
+    <h2>CSS Selectors 5.3</h2>
+    <br />
 
 
+    <br />
+    <hr />
+    <a href="../HTML_Portfolio_Page_Extras/Full_Stack_Index.html"><h2>Return To Index</h2></a>
+    
+</body>
 
-<br />
-<hr />
+</html>
