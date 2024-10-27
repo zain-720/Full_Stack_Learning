@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" style="background: goldenrod;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link 
+        rel="stylesheet"
+        href="./stylech6.css"
+        />
+    
+    <style>
+        h2 {
+            color: blue;
+            background-color: gray;
+            font-size: 25px;
+            font-weight:bold;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
+
+
+    <title>Chapter6</title>
+</head>
+
+<body>
+
+    <h1>Chapter 6: CSS Properties</h1>
+    <hr />
+
+    <h2>6.0 CSS colors</h2>
+    <br />
+
+    <p> Just a recap of previous color talk from chapter 5, and custom color hex code creation. </p>
+
+    <br />
+    <hr />
+    <h2>6.1 Font Properties</h2>
+
+    Example : <br />
+    <br />
+    h2 { <br />
+    <ul>
+        font-weight: bold <br />
+        font-size: 25px <br />
+        font-family: sans-serif <br />
+        text-algin: center <br />
+    </ul>    
+    }
+    <br />
+    <br />
+
+    Font size logic
+
+    <ul>
+        <li> px: pixel </li>
+        <li> pt: similar to pixel </li>
+        <li> em: 100% size of parent  </li>
+        <li> rem: 100% size of root  </li>
+    </ul>
+
+    What does (em) and (rem) do exactly? <br />
+    <br />
+    Ex : (em) <br />
+
+    Lets say {h1: 1rem}, then if we had a parent tag on it h1 would take 100% the size of the parent tag <br />
+    <br />
+    &lt;body&gt;
+    <ul>
+        &lt;h1&gt; Lebron James &lt;/h1&gt; </li>
+    </ul>
+    &lt;/body&gt;
+    <br /> <br />
+    <p>If body was 20px then h1 in this case would be 20px. If h1 was 2em and body 20px then we get (20 * 2) = 40px
+        as h1 size in this case
+    </p>
+
+    <br />
+    Ex : (rem) <br />
+
+    <p>Looking back to our previous case where body is 20px but now {h1: 2rem}, h1 is not affected by body
+        anymore only the highest level (root) tag can ffect it, in most cases that is just the html tag. <br /> <br />
+        Try to use this as a base for creating text sizes for your site 
+    </p>
+
+    <br />
+    Font weight. (lighter, bolder) are relative to parent font weight while we can normally use (normal, bold)
+    <br /><br />
+
+    <p>Font familes. Simply the type of font we want to use with backups if it fails to work. Can also
+        import fonts from outside sources using &lt;link&gt;.
+    </p>  
+
+    <br />
+    <hr />
+    <h2>6.2 Inspecting CSS</h2>
+
+    <p>Tools to help with debugging our css. On chrome when on an hmtl just (more tools), then (developer tools)
+        and it will open up, or just clicking (insepct) on an item to see its location in the html including its
+        css style addons and other css abrtibutes. Any changes made here does not acctually affect the real file.
+        <br /> <br />
+
+        Going to more tools in developer tools the nclicking (CSS Overview) we can get a break out of the fonts
+        colors and other elements used to make the site easier. 
+    </p>
+
+    <br />
+    <hr />
+
+    <h2>6.3 CSS Box Model - Margin, Padding and Border properties</h2>
+    <br />
+
+    Allow elements to take up more or less space, depending on how we set it up. <br /><br />
+
+    Ex : for some element <br />
+    height: 300px, 100% (of page size) <br />
+    width: 300px, 100% (of page size) <br /> <br />
+
+
+    This below makes a style=(solid) color=(balck) type=(border) thickness=(10px) thick around the box.
+    Given (border: 10px solid black) we can do. <br /> <br /> 
+
+    &emsp;border-top: 0px  (no more boarder at top)<br />
+    &emsp;border-width: 0px, 10px, 20px, 30px  (0 top, 10 right, 20 bottom, 30 left)<br />
+    &emsp;border-width: 0px, 10px (0 top, 10 right, 0 bottom, 10 left)<br /> <br />
+
+    So we can have further specifications for box perameters, as well as padding around text. <br /> <br />
+
+    &emsp; padding: 20px (text inside now surrounded by at least 20 more px on all sides to push boarder out) <br /> <br />
+
+    margin will create a buffer between boarders. <br /> <br />
+
+    &emsp; margin: 10px (10px buffer outside of the border) <br /> <br />
+
+    This picture sums it all up. <br /> 
+
+    <img src="./Screenshot 2024-10-25 143638.png" alt="box layout picture"/> <br /> <br />
+
+    <p>The tag &lt;div id=""&gt; &lt;/div&gt; allows us to set up our own boxes from a group of elements and not just singular ones.
+        For example take this box below connects to id="box-1" for this image and text, so everything in it is one box a
+        affected by its rules.
+    </p>
+
+    <div id="box-1">
+
+        div set with 200px height 200px width <br /> <br />
+
+        Gold background <br />
+        Purple text <br />
+        2px side border, 4px top and bottom border <br />
+        padding of 10px from border <br />
+        base margin of 20px from other boxes and website walls <br />
+        added margin-left 150px <br />
+
+    </div>
+
+    Note : items like the paragraph element get 1px margin automatically, make sure to offeset this to keep everything center.
+
+
+
+    <br />
+    <hr />
+    <a href="../HTML_Portfolio_Page_Extras/Full_Stack_Index.html"><h2>Return To Index</h2></a>
+
+
+</body>
+</html>

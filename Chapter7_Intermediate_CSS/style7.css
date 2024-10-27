@@ -1,0 +1,58 @@
+p {
+    margin: 0px;
+}
+
+html {
+    background: gray;
+}
+
+h1 {
+    color: gold;
+}
+
+div {
+    outline: 1px solid blue;
+}
+
+.box { /* box class */
+    width: 200px;
+    height: 200px;
+    background-color: green;
+    border: 1px solid red;
+    z-index: 5;
+}
+
+.box2 { /* box class */
+    width: 100px;
+    height: 100px;
+    border: 1px solid yellow;
+    background-color: aqua;
+    z-index: 10;
+}
+
+.static .box {/* decendant rule  */
+    position: static;
+    left: 50px;
+    top: 50px;
+}
+
+.relative .box {
+    position: relative;
+    left: 50px; /* can also use % for these, (50% total distance of parent it gets pushed from the left */
+    top: 50px;
+}
+
+.absolute .box {
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    z-index: -1;
+}
+
+.fixed .box {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    left: 660px;
+    top: 30px;
+}

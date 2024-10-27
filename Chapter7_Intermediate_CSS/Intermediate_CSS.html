@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link 
+        rel="stylesheet" 
+        href="style7.css"
+    />
+    <!-- (rel) is the relationship the css has to this html file, its the stylesheet for it -->
+    <title>Chapter7</title>
+</head>
+
+<body>
+    
+    <h1>Chapter 7: Intermediate CSS </h1>
+    <hr />
+
+    <h2>7.0 CSS Cascade</h2>
+
+    <p>Rule hieracrhy, what gets to affect an element and what doesnt based on prioroity. 
+        <br /> For example for styles, first the html looks at the style sheet then &lt;style&gt; then
+        then lastly the inline style changes, each overriding the setting of the level previous to it. 
+    </p>
+
+    <br /> <br />
+    
+    <p>Same way doing: <br /> color: red; <br /> color: blue; <br /> the one read lowest replaces the ones before, just 
+    like the style sheets did to eachother</p>
+
+    <br /> <br />
+
+    <p>Order of specificity is 1.) id, 2.) attribute, 3.) class, 4.) element <br />
+    Take for example the blue text, the priorities would work so the text color is orange, since id is most specific (made for a single element)</p>
+
+    <br />
+    <img src="./Screenshot 2024-10-25 154502.png" width="400" height="125" alt="priorities picture"/> 
+    <br /> 
+
+    <br />
+    <hr />
+    <h2>7.1 Combining CSS Selectors</h2>
+
+    <p>More specific styling per class by combining them <br /> Ex: <br /> <br />
+    &lt;p&gt;Yellow Text&lt;/p&gt; <br />
+    &lt;div class="box inner_box"&gt; <br />
+    &emsp; &lt;p&gt;White Text&lt;/p&gt; <br />
+    &lt;/div&gt; <br /> <br /></p>
+    
+    <p>Combining this with stlye sheet modifications of: <br /> <br />
+    
+    p { <br />
+        &emsp; color: yellow; <br />
+    } <br />
+    .inner-box p { <br />
+        &emsp; color: white; <br />
+    } <br /> <br />
+    </p>
+
+    <p> These settings create: yellow text on the outside and white text in the inner box <br /> <br /></p> 
+
+    <h3>Combining selectors (methods)</h3>
+    
+
+    Group rule : (Selectors under the same rule set by placing them together with commas) <br /> <br />
+
+    selector, selector { <br />
+        &emsp; color: blue; <br />
+    } <br /> <br />
+
+    Parent child selector rule : (Direct child of parent class (selector) with the given name (selectorC, p, etc) will have these effects) <br /> <br />
+
+    selector > selectorC { <br />
+        &emsp; color: blue; <br />
+    } <br /> <br />
+
+    Decendant rule : (as long as selectorC is in someway a decendant of selector, it will be affected by it) <br /> <br />
+
+    selector selectorC { <br />
+        &emsp; color: blue; <br />
+    } <br /> <br />
+
+    Chaining : (apply given styles where all the selectors listed are true) <br />
+    example : for &lt;h1 id="title" class="big heading"&gt;Hello World&lt;/h1&gt; to stylize this specificially chain as, <br />
+    h1#title.big.heading (selectors are chained so it applies to this specific type of element, (element should always be first in naming ex (li, p, etc))) <br /> <br /> 
+
+    selectorselectorC { <br />
+        &emsp; color: blue; <br />
+    } <br /> <br />
+
+    These rules are also able to be combined together ex decendant and chanining together
+
+    <br />
+    <hr />
+    <h2>7.2 CSS Positioning</h2>
+
+    <p>4 different positioning values. Static, Relative, Absolute, Fixed</p>
+    <br/> <br/>
+
+    <p>Static : this is the HTML default. Everything just flows downwards as its added in. <br /><br />
+    </p>
+
+    <div class="static">
+        <div class="box"></div>
+    </div>
+
+    <br/><br/>
+
+    <p>Relative : Where an item is position relitave to where its default position would put it
+        in this case 50px from left, 50px from top.
+    </p>
+
+    <div class="relative">
+        <div class="box"></div>
+    </div>
+
+    <br/><br/><br/><br/>
+
+    <p>Absolute : Position relative to nearest positioned ancestor or top left corner of webpage.
+        Nearest ancestor here is box2 (This time parent div is set to box so its outline is confined) <br/>
+        Z-axis operations determine which boxes are ontop of each other ex here box2 has z index 10 and absolute box
+        has z index of -1, so it is put behind box 2 (absolute is always top unless its -1)
+    </p>
+
+    <div class="box2 absolute" style="position: relative;">
+        <div class="box"></div>
+    </div>
+
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+    <p>Fixed : Relative to the top corner of the browser widnow (that is where the small green box comes from)</p>
+
+
+    <div class="fixed">
+        <div class="box"></div>
+    </div>
+
+
+    <br/><br/>
+
+    More examples for all of this in the 7.2 folder
+
+    <br/>
+    <hr/>
+    <a href="../HTML_Portfolio_Page_Extras/Full_Stack_Index.html"><h2>Return To Index</h2></a>
+
+</body>
+</html>

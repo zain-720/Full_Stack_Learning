@@ -1,0 +1,15 @@
+
+div {
+    height: 200px;
+    width: 200px;
+  }
+
+#box-1{
+    background-color: gold;
+    color: purple;
+    border: 2px solid black;
+    border-width: 4px 2px;
+    padding: 10px;
+    margin: 20px;
+    margin-left: 150px;
+  }

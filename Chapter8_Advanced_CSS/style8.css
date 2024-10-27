@@ -1,0 +1,46 @@
+p {
+    margin: 0px;
+}
+
+.bl {
+    display: block;
+    color: blue;
+}
+
+.bl2 {
+    display: block;
+    color: red;
+}
+
+.sp {
+    display: inline;
+    color: white;
+}
+
+.sp2 {
+    display: inline;
+    color: gold;
+}
+
+.box { /* box class */
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    border: 1px solid red;
+}
+
+.displayInB {
+    display: inline-block;
+}
+
+.displayIn {
+    display: inline;
+}
+
+.imFloatL { /* float text left */
+    float: left;
+}
+
+.classClearL { /* ignore things floating left */
+    clear: left;
+}
