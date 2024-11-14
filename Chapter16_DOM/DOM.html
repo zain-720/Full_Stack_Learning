@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        rel="stylesheet" 
+        href="style16.css"
+    />
+    <title>Chapter16</title>
+</head>
+<body>
+
+    <h1>Chapter 16: Document Object Model (DOM) </h1>
+    <hr />
+
+    <h2>16.0 Adding Javascript to websites</h2>
+
+    <p>We can have Inline, External, and Internal javascript :</p>
+    <br/>
+
+    <p>Inline :</p>
+    <p>We can do &lt;body <span class="blue">onload="alert('HI');"</span>&gt; to have this script run 
+    when the body element is loaded up.</p>
+    <p>This inline javascript is not very modular and bad pratice, try to avoid building like this.</p>
+    <br/>
+
+    <p>Internal :</p>
+    <p>Can add it by adding in a script tag <span class="blue">&lt;script type="text/javascript"&gt; CodeHere &lt;/script&gt;</span>.</p> 
+    <script type="text/javascript">
+        alert("internal script ran");
+    </script>
+    <br/>
+
+    <p>External :</p>
+    <p>Finally we can impliment javascript from an external file <span class="blue">&lt;script src="jsFileName"&gt;&lt;/script&gt;.</span>
+    Normally located in the body element (at the bottom of the body) so it does not try to change an element which does not yet exist.</p>
+    <br/>
+
+    <p>Ex: if the javascript had (document,querySelector("h1").innerHTML = "Good bye"), this should run after the HTML elements have complied so it doesnt 
+        end up just finding nothing.
+    </p>
+
+    <br />
+    <hr />
+    <h2>16.1 Intro To the DOM</h2>
+
+    <p>Adding functionality to HTML elements : The DOM catalogues the webpage into individual objects that we can select and manipulate.
+       The catalogue is just a tree which should be equally represented if your HTML in indented correctly.
+    </p>
+    <br/>
+
+    <p>Below is a checkbox and button with added javascript functionality</p>
+    <br/>
+    <input type="checkbox">
+    <button style=" color: red;">some button</button>
+
+    
+    <p><br/> How we did it : Basic path finding <br/>
+    We know that the highest level for the HTML is document. We can use the doucment to navigate down the path to the exact part
+    of the HTML code we want to add fucntionality. </p>
+    <br/>
+    <ui>
+        <li>document; : is the document object</li>
+        <li>.firstElementChild; : retruns everything in first child (documents first (and only) child is HTML)</li>
+        <li>.firstElementChild.firstElementChild : Gets the first child of HMTL (head in our case)</li>
+        <li>.firstElementChild.lastElementChild : Gets the last child of HMTL (body in our case)</li>
+        <li>var head = document.firstElementChild.lastElementChild.fristElementChild : Gets the first tag in the body of our HTML, which we can edit
+            now by using javascript.
+        </li>
+        <li> head.innerHTML ="Good Bye": Will now change the text in h1</li>
+        <li> head.style.color ="red": Will now change the color of h1</li>
+    </ui>
+
+    <p><br/> How we did it : Specific path finding <br/>
+    To find the check box and the button we did path finding and editing by : </p>
+    <br/>
+    <ui>
+        <li>document.querySelector("input").click(); : Look insdie document for object that has selector of "input", then call a method click on it (This method will simulate a click)</li>
+    </ui>
+
+    <br />
+    <hr />
+    <h2>16.2 Selecting HTML Elements With javascript</h2>
+
+    <p>Look at better ways to find the element your looking to modify/add functionality to.</p>
+    <br/>
+
+    <p>Again we have our box and checkbox:</p>
+    <input type="checkbox">
+    <button class="btn1" style=" color: blue;">some button</button>
+    <br/>
+
+    <p><br/> Get elements by tag name : <br/>
+    document.getElementsByTagName("Something"), will return array of items with that tag.
+    To affect items in this iwe need to index it.</p>
+    <br/>
+
+    <p>Get elements by class name :<br/>
+    document.getElementsByClassName("Something"), will return array of items with that class.
+    To affect items in this we need to index it.</p>
+    <br/>
+
+    <p>Get element by ID : <br/>
+    document.getElementById("Something"), will return a variable of the item with that ID, since IDs are unique.</p>
+    <br/>
+    
+    <p>More about .querySelector() :</p>
+    <p>The thing about document.querySelector() is that we can have it look for element, class, ID, etc but we need to specify its type
+        just as when we set them up in the css file (# for ID), (. for class). 
+    </p> <br/>
+
+    <p>.querySelector() is even able to combine selectors to get what it needs. For example say in a list element we want to select the a tag.
+        Then we do document.querySelector("li a"); and we get that. Can also combine types of selectors, say we want li with class item
+        we get document.querySelector(li.item) (no spaces when the stuff occurs in the same element).
+    </p> <br/>
+
+    <p>If more than one item ends up satisfying the condition we only get back the first occuring item. To get all
+       you'd need to use .querySelectorAll()
+    </p>
+
+
+    <br />
+    <hr />
+    <h2>16.3 Maniplating and Changing Styles of HTML Elements with Javascript</h2>
+
+    <p>How to use Javascript to manipulate the elements we've selected</p>
+    <br/>
+    <p>Again the button and checkbox</p>
+    <br/>
+    <input type="checkbox">
+    <button class="btn2">some button</button>
+    <br/>
+    <p><br/> Changes to button done in .js file.</p>
+
+    <br />
+    <hr />
+    <h2>16.4 Seperation of concerns</h2>
+
+    <p>Rememeber : HTML is for content, CSS is for style, javascript is for behavior (so we wouldnt normally style the button in 16.3 in javascript)</p>
+    <br/>
+
+    <p>So to make style changes without directly writing them in JS we can use .classList <br/>
+    document.querySelector("button").classList; gets all the classes on button <br/> 
+    document.querySelector("button").classList.add("") , will add a class to the item. We can add a premade class to it, which by  heiarchy by being read last will overide the class before
+    making the changes we want. <br/>
+    There is also a .remove() as well.<br/>
+    Also have .toggle(), if the class is there remove if if its not add it </p>
+    <br/>
+
+    <br />
+    <hr />
+    <h2>16.5 Text Manipulation and the Text Content Property</h2>
+
+    <p>.textContent : Lets us change the text content at the line without affect the inner HTML possibly around it
+    So to also change style just user .innerHTML</p>
+
+    <br />
+    <hr />
+    <h2>16.6 Manipulating HTML Element Attributes</h2>
+
+    <p>Reacll what an attribute is : things colored orange (class, type, href, src, etc) :</p>
+    <br/>
+
+    <p>Say we have a link that we want to change, lets get a list of attributes attached to the element. <br/>
+    document.querySelector("a").attributes; : Will return a list of all the attributes attached to a. <br/>
+    document.querySelector("a").getAttribute("href"); , To get the text the attribute is pointing at. <br/>
+    document.querySelector("a").setAttribute("href", "ChangeTextTo"); , To set the text the attribute is pointing at. </p>
+
+
+    <br/>
+    <hr/>
+    <a href="https://www.w3schools.com/jsref/dom_obj_document.asp"><h2>Read more on DOM</h2></a>
+    <a href="../HTML_Portfolio_Page_Extras/Full_Stack_Index.html"><h2>Return To Index</h2></a>
+
+    <script src="practiceScript.js" charset="UTF-8"></script>
+</body>
+</html>

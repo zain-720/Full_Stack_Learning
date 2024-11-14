@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link 
+        rel="stylesheet" 
+        href="style9.css"
+    />
+    <title>Chapter9</title>
+</head>
+<body>
+
+    <h1>Chapter 9: Flexbox </h1>
+    <hr />
+
+    <h2>9.0 Display: Flex</h2>
+
+    <p>While things like float are great for just wrapping text around an image having it be your primary tool for 
+        create a page layout is a bad idea <br /> instead it makes sense to use Flexbox, Grid, Bootstrap to carry out that task.
+        In this section we look over Flexbox.
+    </p> <br/> 
+
+    <p>Example of flex box build for text below :</p>
+
+    <div class="container">
+        <div class="one"><p class="background">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus eveniet minus dolor qui laudantium
+            molestias repudiandae reprehenderit impedit aliquid, fugit eligendi placeat, unde praesentium, vel veritatis
+            voluptate ex corporis magni deleniti. Ipsum id at ad quo neque eos ducimus similique aliquam, modi unde soluta
+            inventore non eius tenetur quibusdam corrupti!</p></div>
+        <div class="two"><p class="background">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque nobis rem ipsa voluptatibus, recusandae illum
+            consequuntur cum, nulla dolores eligendi fuga harum labore animi dolorum asperiores voluptate praesentium
+            beatae, quibusdam sapiente illo ullam cupiditate officiis. Qui consequuntur sit quaerat atque magni possimus,
+            nemo, pariatur incidunt delectus laborum veritatis placeat fugit.</p></div>
+        <div class="three"><p class="background">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus, voluptatem officia nulla minus, sunt nam
+            aliquam quis explicabo consequatur beatae at? Eligendi corrupti quisquam enim accusantium possimus quis esse
+            praesentium! Obcaecati repudiandae commodi, earum eaque velit voluptatum illum temporibus. Corporis quod
+            dolorem
+            officia, optio eos fuga. Voluptatum repellat maiores laborum rem voluptas esse. Hic consequuntur, quidem nobis
+            suscipit iste autem quae! Itaque ut doloribus eaque quidem quam nostrum eos quibusdam, id vero optio
+            consectetur
+            velit ipsum architecto ad maiores modi aperiam nemo sed est molestiae? Facere velit magnam assumenda ullam
+            veniam officia ea doloribus dolor. Atque, dolore exercitationem. Expedita, eius?</p></div>
+    </div>
+
+    <p><br/> When something uses flex it works under a totally different set of rules as compared to inline, block, inline-block, etc. <br/>
+    Flexbox will ingore previous display values are try to put everything on one line. <br/>
+    This flexbox will act like a block unless we set display to inline-flexbox, then it other things to occupy empty space next to it like an inline-block. <br/>
+    </p>
+
+    <br />
+    <hr />
+    <h2>9.1 Flex Direction</h2>
+
+    <p>Row and Column Layouts: The reason by default that when we set a flexbox the items fill left to right is because its flex-direction <br/>
+    by deafault is set to row (stacking parts along a row). In the basic Flexbox the <span class="blue">main-axis is left to right</span> , its cross-axis is top to bottom <br/><br/>
+    
+    Ex lets set the same boxes from above to now have a flex direction of column with flex-basis of 100px</p> <br/>
+    
+    <div class="container2">
+        <div class="one background"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus eveniet minus dolor qui laudantium
+            molestias repudiandae reprehenderit impedit aliquid, fugit eligendi placeat, unde praesentium, vel veritatis
+            voluptate ex corporis magni deleniti. Ipsum id at ad quo neque eos ducimus similique aliquam, modi unde soluta
+            inventore non eius tenetur quibusdam corrupti!</p></div>
+        <div class="two background"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque nobis rem ipsa voluptatibus, recusandae illum
+            consequuntur cum, nulla dolores eligendi fuga harum labore animi dolorum asperiores voluptate praesentium
+            beatae, quibusdam sapiente illo ullam cupiditate officiis. Qui consequuntur sit quaerat atque magni possimus,
+            nemo, pariatur incidunt delectus laborum veritatis placeat fugit.</p></div>
+        <div class="three background"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus, voluptatem officia nulla minus, sunt nam
+            aliquam quis explicabo consequatur beatae at? Eligendi corrupti quisquam enim accusantium possimus quis esse
+            praesentium! Obcaecati repudiandae commodi, earum eaque velit voluptatum illum temporibus. Corporis quod
+            dolorem
+            officia, optio eos fuga. Voluptatum repellat maiores laborum rem voluptas esse. Hic consequuntur, quidem nobis
+            suscipit iste autem quae! Itaque ut doloribus eaque quidem quam nostrum eos quibusdam, id vero optio
+            consectetur
+            velit ipsum architecto ad maiores modi aperiam nemo sed est molestiae? Facere velit magnam assumenda ullam
+            veniam officia ea doloribus dolor. Atque, dolore exercitationem. Expedita, eius?</p></div>
+    </div>
+    <br/><br/>
+
+    <p>Now the items are filled in along a column with a 1rem gap. In this case now the <span class="blue">main-axis is top to bottom</span> and cross-axis is now left to right. <br/><br/>
+    
+       The main-axis matters because its what most customizations affect. For example doing <span class="blue">flex-basis: 100px</span> this ensures that the main-axis is at least <br/>
+       that given size for each box, no matter how much content it has <br/><br/>
+    
+       These are all just flexes along the main-axis</p>
+    
+    <br />
+    <hr />
+    <h2>9.2 Flex Layout</h2>
+
+    <p>Is our property going to go to the child (boxes in felxbox) or parent (The flexbox container). Here are some stuff to help formatting the flexbox. <br/><br/>
+    
+    <span class="blue">order: #;</span> add this into a box to change where in the flexbox an item is displayed. For example setting (order: 1;) on a &lt;div&gt; with nothing else ordered would move the item to the furthest right/bottom box <br/>
+    since its set with the highest value by default. All boxes are initially set with an order 0, higher values are further right/bottom. <span class="blue">This is a child attribute</span>
+    </p> <br/>
+
+    <p><span class="blue">flex-wrap: nowarp;</span> by default flex box has its wrap setting set to no wrap, causing elements to possibly be pushed of a page. <br/>
+    We can change this property to <span class="blue">flex-wrap: warp;</span> moving the items that used to have no space onto the next line. <span class="blue">This is a parent attribute</span></p>
+    <br/>
+
+    <p><span class="blue">justify-content: flex-start;</span> Sets the distrabution of our items on the <span class="blue">main-axis</span>. The base setting is flex-start, if we did <span class="blue">flex-end</span> then all items would be pushed to the right/top wall <br/>
+        of the flexbox, if extra space was left. <span class="blue">center</span> just puts the item in center between the leftover space. <span class="blue">space-between/around/evenly</span> gaps out the items to fill the leftover space.<br/>
+       <span class="blue">This is a parent attribute</span></p>
+    <br/>
+
+    <p><span class="blue">align-items: flex-start</span>, same attribute names as justify-content, only this time it sets for the distribution along the <span class="blue">cross-axis</span>. Would need to set a size for this axis (preferably ##vh "veiwport height"). </p>
+    <br/>
+
+    <p> We can combine these two forms of movement for items to set boxes to different spaces.</p>
+    <br/>
+
+    <p><span class="blue">align-content: cetner;</span> This only works if the flex-wrap is set to wrap, thsi determines how the next line is put together when top line runs out of space.</p>
+    <br/>
+    <br/>
+
+    <p>Below is a good page if you ever need to refresh on layout formatting.</p>
+    <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"><h4>CSS Flexbox Layout Guide</h4></a> 
+
+    <br />
+    <hr />
+    <h2>9.3 Flex Sizing</h2>
+
+    <p>Shrinking and gorwing the items in a Flexbox container: Lets say we have a webpage 
+       with 4 paragraph elements in a basic Flexbox container.</p>
+    <br/>
+
+    <div class="container3">
+        <div class="one background"><p>Home</p></div>
+        <div class="two background"><p>About</p></div>
+        <div class="three background"><p>Contact</p></div>
+        <div class="four background"><p>The Best Programming School In The World</p></div>
+    </div>
+    <br/>
+
+    <p>We can set each of the boxes to initially try to hold a certain width, until the page is to small, then it defaults back to creating the shortest width possible from the given element.<br/>
+    In this case the width is set to try to stay at 100px</p>
+    <br/>
+
+    <div class="container3">
+        <div class="item one background"><p>Home</p></div>
+        <div class="item two background"><p>About</p></div>
+        <div class="item three background"><p>Contact</p></div>
+        <div class="item four background"><p>The Best Programming School In The World</p></div>
+    </div>
+    <br/>
+
+    <p>This is the pirority list of what HTML uses to determine the width:<br/><br/>
+    
+        &emsp;Content width < Width < flex-basis < min-width/max-width</p> <br/>
+
+    <p> So if in our stylization we have a width then a flex basis the flex basis will override the width and that will determine the Flex items width.</p>
+    <br/>
+
+    <p>We can manually set the min-width and max-width ourselves for each flex item with <br/> <span class="blue">max-width: ##; min-width: ##;</span></p>
+    <br/>
+
+    <p><span class="blue">flex-grow: ##; flex-shrink: ##;</span> controls the growing and shriking of the flexbox, setting them to 0 stops it 1 means its on. <br/>
+    by default for each flex item grow is set to 0 and shrink is set to 1.</p>
+    <br/>
+
+    <p><span class="blue">flex-basis: 0;</span> sets flex-basis to auto</p>
+    <br/>
+    
+    <p>We can shorten the writing by combining these three items into one <span class="blue">flex: # # #;</span> first is frow second is shrink third is basis to get basic setup you can just do flex: 1,2,3,etc;</p>
+
+    <br/>
+    <hr/>
+    <a href="../HTML_Portfolio_Page_Extras/Full_Stack_Index.html"><h2>Return To Index</h2></a>
+
+</body>
+</html>

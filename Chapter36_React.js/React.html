@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+    crossorigin="anonymous">
+    <link
+        rel="stylesheet" 
+        href="style36.css"
+    />
+    <title>Chapter 36</title>
+</head>
+<body>
+    
+    <h1>Chapter : REACT</h1>
+    <hr />
+
+
+    <h2>36.0 : Intro </h2>
+    <p>React learning files will be on (CodeSandbox) and (my-react-app once you learn how to use React better)</p>
+    <br/>
+
+    <p>To make things easier, most work done will be complied in the my-react-app and built up to mordern standards to make
+    understanding better.</p>
+    <br/>
+
+    <p>To set up React in VS : Going to be using vite to build our apps, so do <br/>
+        npm create vite@latest my-react-app --template react, then <br/>
+        Select as React as the framework, then <br/>
+        Select Javascript as the variant to work with, then <br/>
+        cd my-react-app, to go to the app build, then <br/>
+        npm install, install dependencies, then <br/>
+        npm run dev, to run server <br/>
+        Vite will recomplie the server everytime its updated to make coding easier.</p>
+    
+    <br />
+    <hr />
+    <h2>36.1 : Intro to JSX and Babel </h2>
+    <br/>
+
+    Notes : 
+    <p><br/>
+        <ui>
+            <li>A single div in our body section with the ID root will be in most any React app
+                by convention, and is the root of our react application. So everything we create
+                in React will be inserted inside div ID root. This will be all the HTML code needed as the 
+                rest will be done in the java-script file using React. </li>
+            <img src="./images/Screenshot 2024-11-14 002648.png" alt="Cool Photo" width="370" height="200" />
+            <p><br/></p>
+
+            <li>In index.js the first thing we do is require the react and react-dom modules.</li>
+            <p><br/></p>
+
+            <li>Next <span class="blue">ReactDOM.render is depreciated</span> so we here we will use ReactDOM.createRoot, which
+                does the same thing. Now we create a const "root" which has where we want to show the code, 
+                while render() still holds what to show. So this, </li>
+            <img src="./images/Screenshot 2024-11-14 011032.png" alt="Cool Photo" width="370" height="200" />
+            <br/> will create this, <br/>
+            <img src="./images/Screenshot 2024-11-14 011251.png" alt="Cool Photo" width="320" height="200" />
+        </ui>
+    </p>
+    <br/>
+
+    <p>React will break down the Javascript given to browser readable code.</p>
+    <br/>
+
+    <p>notice that we have a <span class="blue">Div</span> surrounding the html. That is because technically
+    .render can only render 1 element, so to add multiple they must be added in a single div.</p>
+
+    <br />
+    <hr />
+    <h2>36.2 : Javascript expressions in JSX & ES6 Template Literals </h2>
+    <br/>
+
+    <p> JSX lets us put HTML in Javascript and even Javascript inside that HMTL.</p>
+    <br/>
+
+    <p>Say I wanted to add a <span class="blue">const</span> into my HTML, we could simply 
+    wrap the javaScript in {} to add it <br/>
+    Ex :</p>
+    <img src="./images/Screenshot 2024-11-14 013850.png" alt="Cool Photo" width="380" height="200" />
+    <p>Outputs, </p>
+    <img src="./images/Screenshot 2024-11-14 013942.png" alt="Cool Photo" width="390" height="200" />
+    
+    <p><br/> We can create any javascript expression within these currly braces {} 
+        but not statements (ex: if(name==){} else{}) will not work.</p>
+    
+
+    <br />
+    <hr />
+    <h2>36.3,4 : JSX Attributes & Styling React Elements + Inline Styling for React Elements</h2>
+    
+    <p>Adding CSS styling.</p>
+    <br/>
+
+    <p>We can ethier link them in our html, but a better way is to import them from within our JSX file 
+        so that we have greater flexibility with what is used. <br/>
+        ex :
+    </p>
+
+    <img src="./images/Screenshot 2024-11-14 021143.png" alt="Cool Photo" width="390" height="200" />
+
+    <p>Will give </p>
+
+    <img src="./images/Screenshot 2024-11-14 021235.png" alt="Cool Photo" width="390" height="100" />
+    <p>Since we have ./index.css imported into the JSX file.</p>
+    <br/>
+
+    <p>Note attributes we add for our HTML will now we done camel cased for JSX ex: classname is now className, etc.
+        use w3schools to learn more on HTML attributes.
+    </p>
+    <br/>
+
+    <p>We can even just the javaScript embeding to set const and image names then {} to input them in img src="" lines.</p>
+    <br/>
+
+    <p>If we want an inline style added, instesd of ex: (style="color: red") we write : (style={{color: "red"}}), in JSX it wants the style as a JS object (key : value).
+        first pair of {} is for javaScript to go in second set is for the key value pair object.
+    </p>
+    <br/>
+    <p>Inline styles are great if we want to use the const to rapidly change styles based on certain changes, by making classes that are 
+        just key value pairs, from within the JSX file, ex : 
+    </p>
+    <img src="./images/Screenshot 2024-11-14 024551.png" alt="Cool Photo" width="250" height="100" />
+    <p>Is a JSX javascript style class that can be used in style={}. We can then edit this as well constantly
+        and even by using if statements.<br/> So,
+    </p>
+    <img src="./images/Screenshot 2024-11-14 025854.png" alt="Cool Photo" width="450" height="400" />
+    <p>Gives output of cool night and blue text or hot day and red text depending on the current hour</p>
+
+
+    <br />
+    <hr />
+    <h2>36.5 : React components </h2>
+    
+
+    <p>Adding CSS styling.</p>
+    <br/>
+    
+
+    <br/>
+    <hr/>
+    <a href="../HTML_Portfolio_Page_Extras/Full_Stack_Index.html"><h2>Return To Index</h2></a>
+</body>
+</html>

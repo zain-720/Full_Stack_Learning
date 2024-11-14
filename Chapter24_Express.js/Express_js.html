@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+    crossorigin="anonymous">
+    <link
+        rel="stylesheet" 
+        href="style24.css"
+    />
+    <title>Chapter24</title>
+</head>
+<body>
+    
+    <h1>Chapter 24 Express.js with Node.js </h1>
+    <hr />
+
+
+    <h2>24.0 What is Express Framework?</h2>
+
+    <p><br/> Express is a framework that works on top of the runtime enviroment that is Node (node just lets us 
+       run javaScript on our computer). Express is an actuall framework that lets us create backend for our websites.</p>
+    <br/>
+    
+    <p>Combined we build our websites. Express makes using node and javascript to make our backend way easier.
+
+    </p>
+
+
+    <br />
+    <hr />
+    <h2>24.1 Creating our first server with express</h2>
+
+    <p><br/>Server has the database, server, and application. Clients connects to server to acces applications (index.js files) and databases.
+    </p>
+
+    <p>Going to now build a server using Express.js and Node.js. Express is going to use node so we dont have to acctually
+        interact with the code that is inside node. We are going to use our local computer as the server.</p>
+    <br/>
+
+    <p>Steps to creating an Express server</p>
+    <ui>
+        <li>Create directory.</li>
+        <li>Create index.js file.</li>
+        <li>Initialize NPM</li>
+        <li>Install the Express package.</li>
+        <li>Write server application in index.js.</li>
+        <li>Start server.</li>
+    </ui>
+
+    <p><br/> 1.) Creating a new directory : Create a new directory called 3.1_Express_Server, 
+        to store your server</p>
+    <br/>
+
+    <p>Create index.ks file : Inside of this server directory, create the file index.js</p>
+    <br/>
+    <p>Initialize NPM : Add npm for this server folder so it can use Node moudle packages, including the express.js package <br/>
+    
+        Recall to setup npm do, (npm init) (-y, at the end to speed up setup) (change "main" to whatever you main server file is)
+        at location you want to set it up for. </p>
+    <br/>
+    <p>Install Express package : Next do (npm i express) to install the express.js module.Update type of projext to "module" as well
+        ("type": "module",) right under "main":</p>
+    <br/>
+
+    <p>Write server application in index.js : (All work in in index.js) First import express into index.js, next create an app using the express object (const app = express();)
+       and have it do app.listen(Port, RunFunction()).<br/> Port will be the location of the server where we will be listening for requests from the client.
+       <br/>RunFunction is the callback function that will run as soon as the server is setup and starts listening </p>
+    
+    <br/>
+    <p>So now we have a server setup that listens on port 3000 and notifies when it is running.</p>
+    <br/>
+
+    <p>Start the server : To start the server just in our case use the node command (node index.js) to start it up to listen.<br/>
+       In our case since we are running on PC to access it from the client side on google just write (localhost:3000), in 
+       our case there is nothing in there right now</p>
+
+    <br />
+    <hr />
+    <h2>24.2 HTTPS requests</h2>
+
+    <p>Learn the language to make requests to your node server :</p>
+    <br/>
+    <p>When we make HTTP requests there are 5 main words we'll come accross</p>
+    <ui>
+        <li>GET</li>
+        <li>POST</li>
+        <li>PUT</li>
+        <li>PATCH</li>
+        <li>DELETE</li>
+    </ui>
+
+    <p><br/>GET : What we use to request a resource from the server, could be HTML, text etc.</p>
+    <br/>
+
+    <p>POST : What we use to send a reasource to a server, text, etc.</p>
+    <br/>
+
+    <p>PUT : Update method, replace a reasource with  whatever is being sent over.</p>
+    <br/>
+
+    <p>Patch : Patch up a reasource, if some parts of a reasource are missing.</p>
+    <br/>
+
+    <p>DELETE : Delete a reasource from server/database</p>
+    <br/>
+
+    <p>Lets look at this using an updated version of 3.1, in folder 3.2. <br/>
+       in our epxpress app we can add .get("requestLoc", ResponseFunc) to run the GET HTTP function when the website wants to get something at a certain time.
+       <br/>requestLoc is the requests location "/" is root, so this is just the address we need to send that response back to / listen for.<br/>
+       Ex: localhost:3000/ so we get a .get from "/", localhost:3000/about so we get a .get from "/about" <br/> ResponseFunc is a function for what we want to do when we get this. <br/>
+       EX : (req, res) -> {res.send("Hello");} which is a function with a requst and response object. Requests
+       from the page to the server are logged inside req and responses from the server are logged in and sent back via res. <br/> res.send() sends data 
+       inside bracket to whatever called the .get() for it. <br/>
+       </p>
+    <br/>
+
+    <p>Donwload nodemon if you want something that will auto restart your server every time an update is made. Then when you run your server 
+       instead of running node, you run (nodemon index.js). Install with npm i -g (global) nodemon.
+    </p>
+    <br/>
+    <p>Can send HTML code back in our responses. So probably whole pages as well by sending an HTML file?</p>
+
+    <br />
+    <hr />
+    <h2>24.3 Postman</h2>
+    <p>Postman and making other HTTP requests (work in 3.3 folder)</p>
+    <br/>
+
+    <p>Postman : A tool that we can download to test backend without having a frontend for it to test POST, PUT, PATCH, etc.
+        Login online open up an API network select what to send and from what URL, go to body and input the keys and values to send then
+        send them. Ex we could send a POST single from http://localhost:3000/register and give it a key "name" with value "bob", then print it
+        once inside the server.
+    </p>
+    <br/>
+
+    <p>Status codes : 100-199 (infomrational responses), 200-299 (Successful responses), 300-399 (Redirection messages),
+        400-499 (Client error responses), 500-599 (Server error responses).
+    </p>
+    <br/>
+
+    <p>How to use the HTTP vocab learned above (24.2). </p>
+    <br/>
+
+    <p>POST : Made from something from our HTML that needs to send user inputted data. Data is sent by a POST 
+        request, and is heard by the server by .post("Location", ResponseFunction) on the app listenining on website's port.
+    </p>
+    <br/>
+
+    <p>PUT : use .put("Location', response)</p>
+    <br/>
+
+    <p>PATCH : use .patch("Location", respnose)</p>
+    <br/>
+
+    <p>DELETE : use .delete("Location", response)</p>
+    <br/>
+
+    <p>res.sendStatus(###) on all of these to send back the result of the running to the client page, no matter what.</p>
+    <br/>
+
+    <br />
+    <hr />
+    <h2>24.4 Intro to Middlewares</h2>
+    <p>The man in the middle. Using body-parser together with HTML fourms. Modify items that com into server before it gets worked on
+        using middleware. Work in folder 3.4(solution1.js)
+    </p>
+    <br/>
+
+    <p>Body-parser : A Node middleware that parses incoming requests before your handlers, available from the new method it adds (req.body).
+        EX : we'd use this to parse login data </p>
+    <br/>
+
+    
+
+    <p>To send HTML files from our responses we do res.sendFile(__dirname + "path to HMTL file"), need exact path to file we want to 
+        send the client. (__dirname) comes from an npm moudle (path), same with (fileURLToPath) from (url), look at index1 in 3.4 folder.
+    </p>
+    <br/>
+
+    <p>EX: say we have an input fourm &lt;form action="/route" method="POST"&gt; Where within this we'd have 
+        &lt;label&gt; &lt;input&gt; to collect data and form a submit button. This will send data back to server (look at public folder, index.html)</p>
+    <br/>
+
+    <p>Now lets use middleware to parse the info that comes in from that form in index (will learn about form later) and add it to teh req object. <br/>
+       <br/> Install body-parser with (npm i body-parser) 
+       <br/> Mount the middleware using the express app and .use (app.use())
+       <br/> Specify inside .use, bodyParser.urlencoded({extended: true}) to create a body for URL-encoded requests like our form submission.
+       <br/> Now we can use req.body, we can use this in our app.post("FromRoute"/"/submit", (req, res) -> Function)
+       <br/> When we print req.body from inside index1.js via postman for index.html we get the data in the form of key value pairs.
+       <br/>
+    </p>
+    <br/>
+
+
+    <br />
+    <hr />
+    <h2>24.5 Custom middlewares</h2>
+    <p>How to use logging middleware as well as how to create your own.(code still in folder 3.4 (solution2,3,4.js))</p>
+    <br/>
+
+    <p>body-parser belongs to the pre processing category of middleware, now lets look at the loggin types.
+        Ex : morgan, used to log the requests that come into your server (npm i morgan) to install, then use its middleware
+        by putting it inside the .use() method just like body-parser
+    </p>
+    <br/>
+
+    <p>Custom middlewares : We can make custom middlewares by building functions to put into .use() to carry out 
+        middle ware actions EX : (soltuion3.js). In this it builds a function logger that we can use (app.use(logger)).
+        <br/>logger has the parameters of all middlewares (req, res, next), we know what (req) and (res) are but (next)
+        is a method which determines when to move on from the middleware bu running (next();).
+        <br/> The middleware in sol3 is jsut doing some logging, if another middle ware exited next(); would go to
+        the next middleware function, so the next .use() call.  
+    </p>
+
+    <br/>
+    <hr/>
+    <a href="../HTML_Portfolio_Page_Extras/Full_Stack_Index.html"><h2>Return To Index</h2></a>
+</body>
+</html>

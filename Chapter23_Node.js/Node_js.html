@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+    crossorigin="anonymous">
+    <link
+        rel="stylesheet" 
+        href="style23.css"
+    />
+    <title>Chapter23</title>
+</head>
+<body>
+    
+    <h1>Chapter 23: Node.js </h1>
+    <hr />
+
+    <h2>23.0 What is Node.js</h2>
+
+    <p><br/>Node.js is a Java based backend framework, framworks are filled with prebuilt components that make
+    back end much simplier than writing without it on the regular language.</p>
+    <br/>
+
+    <p>Node lets run javascript on our own local computer rather than leaving it locked to the webpage.
+        its asynchronous event-driven. Node.js lets us run stuff on a server (computer). It basically lets us
+        write javascript for a backend as well.
+    </p>
+
+    <br />
+    <hr />
+    <h2>23.1 Using Node</h2>
+
+    <p><br/> Node REPL : <br/>
+    Read: <br/>
+    Eval: <br/>
+    Print: <br/>
+    Loop; <br/>
+    Enviroment where user inputs are read and evaluated and then results and returned to the user.</p>
+    <br/>
+
+    <p>Type "node" in terminal to start up node, we are now in the node REPL</p>
+    <br/>
+    <p>.(.help) for help (.exit or Ctrl+C) to exit.</p>
+    <br/>
+
+    <p>We can write anything that is javaScript in the node REPL and it will run.</p>
+    <br/>
+
+    <p>Can run javaScript files with node using (node name.js) in terminal (tab can autofill names)</p>
+
+    <br />
+    <hr />
+    <h2>23.2 How to Use Native Node Modules</h2>
+
+    <a href="https://nodejs.org/docs/latest-v18.x/api/index.html">Node.js documentation</a>
+
+    <p><br/>Node.js is a tool set that make creatin gapplications server side alot easier. Icluding file access, networking and alot more.</p>
+    <br/>
+
+    <p>filesystem module : first we need to request this node module. (everything here done in folder 23.2)</p>
+    <br/>
+    <p>const fs = require("fs");</p>
+    <br/>
+    <p>Now to use a method in this module we just got : fs.writeFile(file, data[, options], callback); ,
+        we are going to use this to write into a fresh new file in folder 23.2 with data of a string.
+    </p>
+    <br/>
+
+    <p>Run the node.js from the terminal, now we've just used a native node module.</p>
+    <br/>
+
+    <p>Next reading from the file using fs.readFile(filepath,dataFormat,(err or data));(in 23.3 .js file)</p>
+
+    <br />
+    <hr />
+    <h2>23.3 Node Package Manager NPM</h2>
+
+    <a href="https://www.npmjs.com/">Where to find npm packages</a>
+
+    <p><br/> The NPM is a place which collects modules people have made for Node.</p>
+    <br/>
+    <p>Work with npm in 23.3 folder index.js</p>
+    <br/>
+
+    <p>Initialize first NPM project:</p>
+    <br/>
+    
+    <ol>
+        <li>At wanted location in terminal write : npm init</li>
+        <li>Answer the given questions (leave some blank for now, or put -y at the end of init to skip this, or just npm i)</li>
+        <li>Once all of this is done a new file called package.json is created</li>
+    </ol>
+
+    <p>Now we can import npm packages to our .js file</p>
+    <br/>
+
+    <p>In the terminal where npm was initialized we can do (npm i sillyname) to add packages to use.
+        Once ran a new dependency is added to our package.json. It also created a folder called node_modules
+        which is filled with the codes for package (sillyname)
+    </p>
+    <br/>
+
+    <p>Reading the documentation for the added package will tell us how to use it. We use the new package
+        in the index.js in folder 23.3
+    </p>
+    <br/>
+
+    <p>Can also just import keyword instead to bring in the npm and node packages (as seen in index.js).
+        However to allow this to be used with node we need to go into the package.json and add a feild tpye:
+        and set it to "moudle"  </p>
+
+    <br />
+    <hr />
+    <h2>23.4 QR Code Generator</h2>
+
+    <p>A project, files on the website if you want to go over it some time.</p>
+
+
+    <br/>
+    <hr/>
+    <a href="../HTML_Portfolio_Page_Extras/Full_Stack_Index.html"><h2>Return To Index</h2></a>
+</body>
+</html>

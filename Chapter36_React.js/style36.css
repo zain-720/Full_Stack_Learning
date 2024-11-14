@@ -1,0 +1,18 @@
+p {
+    margin: 0px;
+    width: 500px;
+}
+
+li{
+    margin: 0px;
+    width: 700px;
+}
+
+.blue {
+    color:blue;
+}
+
+.background {
+    background-color: darkseagreen;
+    border: 2px solid black;
+}

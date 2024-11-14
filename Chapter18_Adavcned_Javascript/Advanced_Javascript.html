@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        rel="stylesheet" 
+        href="style18.css"
+    />
+    <title>Chapter18</title>
+</head>
+<body>
+
+    <h1>Chapter 18: Advanced javascript and DOM manipulation </h1>
+    Adding event listeners, sound, and animations to your HTML (working from a project file given)
+    <hr />
+
+    <h2>18.0 Overview</h2>
+    <p> In Drum_Project, Drum Project Starter has the files we will be working on to impliment everything to be learned
+        this chapter
+    </p>
+
+    <br />
+    <hr />
+    <h2>18.1 Adding Event Listeners to a Button</h2>
+
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener">Types of events page</a>
+    
+    <p><br/> First make a function that does something when the button gets clicked :</p>
+    <p>Next and event listener that listens for button click, to do this : <br/><br/>
+
+    Target item of intrest : document.querySelector("button") <br/><br/>
+
+    Add event listener : document.querySelector("button").addEventListener("click", FuncToCall) <br/>
+    FuncToCall could also jsut be a anonymous function where the whole function without a name is just placed there isntead. <br/><br/>
+    
+    Add multiple evemt listenters : if we want multiple event listetners for a element, class, ID, etc, we can loop
+    on on .querySelectorAll("") and add listeners for each of the items.
+    </p>
+    <br/>
+
+    <p>This can all be seen on the index.js in the project code</p>
+
+    <br />
+    <hr />
+    <h2>18.2 Passing Functions as Arguments</h2>
+
+    <p>Its possibel to pass a function name into a function as an argument then use it later to call said function. <br/>
+    function bob(opp, num1, num2) { return opp(num1, num2) } , This is a possible function in javascript. <br/>
+    These functions that take other functions as inputs are called "Higher Order Functions"</p>
+
+    <br />
+    <hr />
+    <h2>18.3 How to play sound on a website</h2>
+
+    <a href="https://stackoverflow.com/questions/9419263/how-to-play-audio">How to play audio page</a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement">More about audio</a>
+
+    <p><br/> var audio = new Audio('audio_file_name/path'); <br/>
+    audio.play();<br/><br/>
+
+    This code will store and play the audio file given to it. Can also be seen on the project file (index.js).
+    Alot more functions available for this audio, can be found in second link.</p>
+    <br/>
+
+    <p>In js to get the current item which the action listener fired for, we can just add a "this". We can use
+       this to get info on the button that made the press, like for example the innerHTML/textContext.
+       More seen in project code (as well a switch statement to help it)
+    </p>
+    <br/><br/>
+
+    <p><h4>Extras:</h4>
+    To set image from CSS for a background do : background-image url("location"); in whatever you want to have that
+    style change. <br/><br/>
+    Can make objects very simply ex : var bob = {age: 12, height: "short", hasJob: true} <br/>
+    Contructors also work as they do in Java var bob = new Bob(Info, ToSend, ToFunc, ConstructorBob);</p>
+    <br/>
+    Method : function associated with an object ex : bob.getMoney() , .getMoney(); is a method of bob
+    <p></p>
+
+    <br />
+    <hr />
+    <h2>18.4 Keyboard events</h2>
+    <p>Note : use (keydown) insstead od (keypress)</p><br/>
+
+    <p>To do this for our event listener istead of having it listen to "click" we have it listen for "keydown".
+    </p> <br/>
+
+    <p> In function parameters we can pass in "event" which lets us looking into the even that triggered the listener.
+        using this we can create certain switch cases for certain keys when they are the event. Get the key with event.key, 
+        there are other stuff you can do with it, just look those up online if you need them.
+    </p>
+    <br/>
+
+    <p>This all can be seen on project code index.js</p>
+    <br/>
+
+    <br />
+    <hr />
+    <h2>18.5 adding animations to websites</h2>
+
+    <p>Lets make the buttons that are on the project flash when pressed (ethier click or keyboard). This addition can 
+        be found in the project code as well as a new function buttonAnimation(currentKey){}
+    </p>
+
+
+    <br/>
+    <hr/>
+    <a href="../HTML_Portfolio_Page_Extras/Full_Stack_Index.html"><h2>Return To Index</h2></a>
+
+    <script src="jscript18.js" charset="UTF-8"></script>
+</body>
+</html>

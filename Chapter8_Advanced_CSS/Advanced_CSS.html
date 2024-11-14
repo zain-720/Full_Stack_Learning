@@ -14,7 +14,7 @@
     <h1>Chapter 8: Advanced CSS </h1>
     <hr />
 
-    <h2>7.1 CSS Display</h2>
+    <h2>8.1 CSS Display</h2>
 
     <p>&lt;span&gt; &lt;/span&gt;has its display set to inline insteasd of block so it isnt auto put on a newline like
         display set of block does. We have three display setting available to us    
@@ -48,9 +48,95 @@
 
     <p>Wrapping text using float and clear : Say we have an image and we want to wrap text around it.<br/>
         We can edit the img style to float text around it
-    </p>
-    
+    </p> <br/>
+
+    <img class="imFloatL" src="../HTML_Portfolio_Page_Extras/20211105_113023.jpg" width="100" height="100" alt="random picture"/> 
+    <p>See now the text is <br/> placed next to this picture instead</p>
+
+    <br/>
+    <p class="classClearL"><br/>Now say we want a footer with our picture below it not wrapped around it. To do this we set footer to <br/>
+    (clear: left;), this text is using it, acts as a buffer for all stuff below it as well so it doesnt need to be spammed <br/><br/></p>
      
+    <img class="imFloatL" src="../HTML_Portfolio_Page_Extras/20211105_113023.jpg" width="100" height="100" alt="random picture"/> 
+    
+    <p class="classClearL"><br/> </p>    
+    
+
+    <p>Above this &lt;p class="classClearL"&gt;&lt;br/&gt;&lt;/p&gt; was used to ignore the float left and allow for
+       block type display again.
+    </p>
+
+    <br />
+    <hr />
+    <h2>8.2 Responsive Websites</h2>
+
+    <p>Making ourwebsite look good on all screen sizes and types (change display as size of screen changes</p> <br/><br/>
+
+    <p> 4 main ways of doing this 
+    <ui>
+        <li>Media Queries</li>
+        <li>CSS Grid</li>
+        <li>CSS Flexbox</li>
+        <li>external frameworks e.g. Bootstrap</li>
+    </ui>
+    </p> <br/>
+
+    <p>Media Queries: Something we put in instead of a selector in our CSS. Instead of a class or ID we could <br/>
+    put. <span class="red">@media (max-width: 600px){}</span> Then inside we write css for screens blow or equal to 600px wide in it.</p>
+    <br/>
+
+    <p>CSS Grid: Create a div that contains many div's</p><br/>
+    <img src="./Screenshot 2024-10-27 155621.png" width="250" height="250" alt="grid pic1"/> 
+    <br/>
+    <p>5 divs are each parts of the grid, which grid container formats</p><br/>
+    <img src="./Screenshot 2024-10-27 160102.png" width="330" height="250" alt="grid pic2"/> 
+    <br/>
+    <p>Grid layout is saying it wants 2 columns 1fr 1fr (equal fractions) <br/>
+    Next line it wants rows first row is 100px in height second and third are 200px in height <br/>
+    Gap between the each of the rows of the columns are 30px <br/>
+    In .first we can change the first div by making its column span 2 columns, so it ends up going full width</p>
+    <br/>
+    
+    <p>CSS Flexbox: If grid applies to 2d layouts Flexbox is great with 1d layouts, laying out boxes on the horizontal axis
+    or laying out vertically. Take the example below with 4 boxes </p><br/>
+    <img src="./Screenshot 2024-10-27 160737.png" width="530" height="250" alt="flexbox pic"/> 
+    <br/>
+    <p>Flexbox layout is saying it wants a display of flex for these <br/>
+    Card starts by giving each box a fixed height and an equal width distrabution along a line by doing <span class="red">flex: 1;</span> <br/>
+    For .first its allocated width is modified with <span class="red">flex: 2;</span> giving it double the width of the unmodified boxes <br/>
+    While .second has its width modified with <span class="red">flex: 0.5;</span> giving it half the width of the unmodified boxes</p> <br/>
+
+    <p>Bootstrap framework : External css code brought in to help build a layout. Bootstrap is built on stop of Flexbox</p><br/>
+    <img src="./Screenshot 2024-10-27 162022.png" width="530" height="250" alt="bootstrap pic"/> 
+    <br/>
+    <p>Ex: we hack a bootstrap "container" which has a bunch of classes built, which together make the display shown above <br/>
+    We can see parts of the flexbox here as well by the column width distrabtuion (This one was 12 column divisions total). So "col-6" would make sure the first box always takes up half the total space <br/> </p>
+    
+    <br />
+    <hr />
+    <h2>8.3 Media Queries</h2>
+
+    <p>Recall <span class="red">@media (max-width: 600px){}</span> :<br/>
+    That is saying that at that if the diplay width is less than or qual to 600px then the styling within it should be used
+    <br/> Ex : <br/> @media (max-width: 600px){ h1{ font-size: 15px;}} , so set font size of h1 to 15px when screen width is 600px or less <br/>
+    <br/> The following box below will change size depending on the display width from its based 300px height and width to 200px width and height</p>
+
+    <div class="box2"></div>    
+    <br/>
+
+    <p><span class="red">@media (min-width: 600px){}</span> : <br/>
+    This will do the opposite of max-width, now anything 600px in width or greater gets its changes. <br/> <br/>
+    The box below will go from 300px h,w to 200px h,w when the screen size reaches 600px or greater </p>
+    
+    <div class="box3"></div>
+    <br/>
+
+    <p>We can combine the min and max to make ranges of effect <span class="red">@media (min-width: 600px) and (max-width: 900px){}</span> <br/>
+    Can also make a statement which effects anything equal to, less than, or greater than the range given  <span class="red">@media (max-width: 600px) and (min-width: 900px){}</span></p>
+    <br/>
+
+    <p>@media print : is used for page print layout, others exist that you can find and read about online</p>
+
     <br/>
     <hr/>
     <a href="../HTML_Portfolio_Page_Extras/Full_Stack_Index.html"><h2>Return To Index</h2></a>

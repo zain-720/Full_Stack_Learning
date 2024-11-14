@@ -1,0 +1,66 @@
+p {
+    margin: 0px;
+}
+
+.blue {
+    color:blue;
+}
+
+.background {
+    background-color: darkseagreen;
+}
+
+.outline {
+    border: 2px solid black;
+}
+
+.container {
+    display: grid;
+    /*width:  800px; can set width to stop it from being responsive at some point*/ 
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem; /* relative size to root element (typically 16px) */
+}
+
+.container2{
+
+    height: 100vh; /* 100% of visible area on browswer window at some point */
+    display:grid;
+    gap: 3rem;
+    grid-template-columns: 1fr 1fr 1.5fr;
+    grid-template-rows: 1fr 1fr;
+
+}
+
+.grid-container {
+    display: grid; 
+    grid-template-rows: 100px 200px;
+    grid-template-columns: 400px 800px;
+    /* or just grid-template: 100px 200px / 400px 800px;*/
+}
+
+.grid-container2 {
+    display: grid; 
+    grid-template-rows: 100px auto;
+    grid-template-columns: 400px auto;
+    /* or just grid-template: 100px 200px / 400px 800px;*/
+}
+
+.item{
+    display:flex;
+    justify-content: center; /* Center along main axis */
+    align-items: center; /* Center along cross axis */
+
+}
+
+.box1{
+    grid-column: span 2; /* box 1 will now span the first 2 columns moving box 3 down to space 4 on second row */
+}
+
+.box2{
+    grid-row: span 2; /* now box 2 will span 2 rows taking up the space below it */
+}
+
+.box3{
+    grid-column: span 2;
+}

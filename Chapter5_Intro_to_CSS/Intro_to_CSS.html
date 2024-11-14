@@ -9,13 +9,16 @@
     /> 
     <!--Goes to a css file that will change the color of all 
     h1 text (not their background) (External)-->
+    
     <style>
         h2 {
             color: blue;
+            background-color: gray;
         }
     </style>
     <!--Changes text color for all h2 text (Internal)-->
-
+    <!--Takes its style sheet from 5.1-->
+    
     <title>Chapter5</title>
 </head>
 
@@ -45,7 +48,6 @@
     </ul>
     <p>style attribute takes in CSS code here to change the background color. Best for single elements.
         Does not get overwrote by a following external or internal CSS prompt </p>
-    <br />
 
     <h3>Internal</h3>
 
@@ -56,7 +58,6 @@
     <p>All of the space within the style tag can be used for CSS. Useful for limiting style
         to the specific HTML file it is located within. Best for single HTML pages
     </p>
-    <br />
 
     <h3>External</h3>
 
@@ -69,11 +70,42 @@
     </p>
     This is the most commonly used type of CSS coding 
     <br />
-
     <hr />
+
+    
     <h2>CSS Selectors 5.3</h2>
     <br />
+    
+    All Setups here are within the stylesheet style.css
 
+    <h3>Class Selector</h3> 
+
+    (.red-heading{ color: ###}). This will set the color for a class to the color selected for the class. 
+    <br /> Ran as &lt;h2 class="red-heading"&gt;Something&lt;/h2&gt;. <br /> This would set the text in here to the color of the class.
+    <h4 class="green-heading">This was made from green-heading</h4>
+    Paragraphs and h can have text changed by the class selector its not specific.
+
+    <h3>Id Selector</h3>
+    
+    These are only to be applied to single elements. Setup as #main{color: ###}. <br />
+    Ran as  &lt;h2 id="main"&gt;Something&lt;/h2&gt;
+    <h4 id="m-mag">This was made from m-mag</h4>
+    
+    <h3>Attribute selector</h3>
+
+    Allow for particular attribute values to be affected only. <br />
+    Example a setup for changing the color of draggables p[draggable]{ color: ### } <br />
+    Now all draggables are some color. 
+    <p draggable="true">Aqua draggable</p>
+    Color for false draggables need to be set seperately. 
+
+    <h3>Universal Selector</h3>
+
+    This will set everything to the color set. *{color: ###}  
+
+    <h3>Notes</h3>
+
+    <p id="endNote">We can do more than change color with this, we can change font size, text alignment, etc.</p>
 
     <br />
     <hr />

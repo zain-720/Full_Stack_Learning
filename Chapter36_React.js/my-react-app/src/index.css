@@ -1,0 +1,28 @@
+p {
+  margin: 0px;
+  width: 500px;
+}
+
+li{
+  margin: 0px;
+  width: 700px;
+}
+
+.blue {
+  color:blue;
+}
+
+/* edit all h1 elements */
+h1{ 
+  color: goldenrod;
+}
+
+.background {
+  background-color: darkseagreen;
+  border: 2px solid black;
+}
+
+.editor {
+  width: 490px; 
+  height: 400px;
+}

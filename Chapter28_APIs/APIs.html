@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+    crossorigin="anonymous">
+    <link
+        rel="stylesheet" 
+        href="style28.css"
+    />
+    <title>Chapter28</title>
+</head>
+<body>
+    
+    <h1>Chapter28 : APIs</h1>
+    <hr />
+    
+    <h2>28.0 Into to APIs</h2>
+
+    <br/>
+    <p>API's give data in a certain format for you to use or will take in data in a certain format. These formats
+        are specified by the API (recall 207 for all of this)</p>
+    <br/>
+
+    <p>In this course we will be learning API usage off of (REST:API) style of APIs. Rest API's use the 
+        HTTP protocals to interact with it.
+    </p>
+    <br/>
+    <p>For thiss lesson we will be working with the API off of postman "https://wheretheiss.at/w/developer"
+        is what we used to learn. Send a get request to the given reasource URL after reading through docummentation
+        and you will get back the data you want. EX : https://api.wheretheiss.at/v1/satellites/25544"" via a GET request brings back data on the ISS
+    </p>
+    <br/>
+
+    <p>Postman also has API's we can use later for applications you want to make.</p>
+    
+
+    <br />
+    <hr />
+    <h2>28.1 Structuring API Requests</h2>
+
+    <p>Endpoints, path parameters and Query Parameters, how to format and change API requests, 
+        how to use public APIs. We will be using this API for this lesson "http://bored-api.appbrewery.com".
+    </p>
+    <br/>
+
+    <p>API Endpoints : normally for requests we have "BaseURL/Endpoint" this Endpoint can be for different purposes.
+        for example in the API system in the bored it could be "/random", "/filter", its jsut a different route to different functions of the API.
+    </p>
+    <br/>
+
+    <p>Query Parameters : After our endpoint we can add a query parameter ex "BaseURL/Endpoint?query=value". 
+       (This is just a key value pair) This is a way to put a key value pair into the URL when you prodvide extra 
+       information for a request. Can even have multiple ex "BaseURL/Endpoint?query=value&query2=value". Here is 
+       an example of this as a GET request to the bored api "https://bored-api.appbrewery.com/filter?type=education(or social, etc)".
+    </p>
+    <br/>
+
+    <p>Path Parameters : Added at the very end ex BaseURL/endpoint/{path-parameter}. Some very specific to identify a reasource 
+        in the API, unike query parameters where it could be multiple things path parameters are for getting specifics. For example
+        this is something used on a GET request from the bored api "https://bored-api.appbrewery.com/activity/3943506". In this case we give it a key 
+        for a specific activity from /activity
+    </p>
+    <br/>
+
+    <br />
+    <hr />
+    <h2>28.2 What is JSON</h2>
+
+    <p> <br/>What is a JSON : A JSON is JavaScript Object Notation, a way to format data. Similar to
+    Javascript but the JSON is serialized into a String (look at recipe.json) the key value pairs have both key and value
+    as Strings. </p>
+    <br/>
+
+    <p>EX : const wardrobe = {doors: 2, drawers: 2}; becomes just {"doors": 2, "drawers": 2} in JSON format <br/>
+    Can use "jsonveiwer.stack.hu" to read these flat JSON packs better</p>
+    <br/>
+
+    <p>Turning a JS object into a JSON : This is done when we want to send some info over the internet. Can do this using a 
+        method from the JSON module and then writing something like this on your key value holder "const jsonData = JSON.stringify(data)"
+        <br/> To unpack data from a JSON back into a JS object this is done using another part of the JSON module "const data = JSON.parse(jsonData)" <br/>
+        All of this can be found in folder 5.2
+    </p>
+
+    <br />
+    <hr />
+    <h2>28.3 Server-side API Requests</h2>
+
+    <p>Making server side API requests using Axios</p>
+    <br/>
+
+    <p>Axios is a node module that makes making requests to an API from a server alot more simple
+        than it usually would be if we made them without it (seen in folder 5.3). IIt auto turns "response"
+        variable into a JS data format, has an (await) function that waits for response before continuing
+        and it makes getting the data take many lines fewer to do (dont need to compile the response data into correct format)
+    </p>
+
+    <br />
+    <hr />
+    <h2>28.4 API Authentication</h2>
+
+    <p>Authenticating yourself with the API provider, proving you have the rights to access an API, (like in 207)</p>
+    <br/>
+
+    <p>Recall the types of authentication. </p>
+
+    <ui>
+        <li>No Authentication</li>
+        <li>Basic Authentication</li>
+        <li>API Key Authorisation</li>
+        <li>Token Bosed Authentication</li>
+    </ui>
+    
+
+    <p><br/> No Authentication : Pulic APIs usally just have a rate limit to stop spam usage of it for each IP address asking for it </p>
+    <br/>
+
+    <p> Basic Authentication : Provide a username and password when you make a request to the API.
+        This is usally a base64 encoded string added into the Header when we make a request, we can test this with postman
+        on the "https://secrets-api.appbrewery.com" API.
+    </p>
+    <br/>
+
+    <p>So for example for this API we first need to input send POST request on "https://secrets-api.appbrewery.com/register" with key value pairs for 
+        username: and password:, to register ourselves for the API. <br/>
+        Now later when we run the GET request "https://secrets-api.appbrewery.com/all?page=1" we input the username and password we registered in Base64 in the header in format "username:password" we get back the data asked for. <br/>
+        Though something like Axios will just do this for us if we provide it the username and password.
+    </p>
+    <br/>
+
+    <p>API Key Authorisation : Authorisation is something that allows us to use an API while Authentication is something
+        that allows someone to be identified as a user to the API provider. Again we can use "https://secrets-api.appbrewery.com"
+        to test key authorisation to allow for certain endpoint useage.
+    </p>
+    <br/>
+
+    <p>First there is a GET call "https://secrets-api.appbrewery.com/generate-api-key" to send us a key for the API. <br/>
+       Next we can use the key to run a GET request on the endpoint /filter "https://secrets-api.appbrewery.com/filter?score=5&apiKey=b886c845-9989-43aa-8c60-ea4a669bb587",
+       filtering by score 5,  next providing the apiKey to be allowed to make this request. (sometimes api-key goes in the header other times the query). </p>
+    <br/>
+
+    <p>Token Based Authentication : We get the user to user a username and password to login and then once they've logged in we generate a token 
+        to be used with the API, so the API is not involved with the username and password, instead it works with a token generated. <br/>
+        For example when we sign into google it generates a token which lets other apps access google API networks, so we could for example interact with google 
+        calander that as user without ever taking the users username or password. 
+    </p>
+    <br/>
+
+    <p>So for example again in "https://secrets-api.appbrewery.com" there is "https://secrets-api.appbrewery.com/secrets/{}" to GET secrets for a specific ID {}. 
+        This is protected by bearer token protection, which uses a users username and password to get a token which will then be used as a rpoxy to interact with the API.
+        So if we POST a request to "https://secrets-api.appbrewery.com/get-auth-token" with a body of key values pairs for username: and password:,
+        we get back a token for that specific user. <br/>
+        Now to run "https://secrets-api.appbrewery.com/secrets/2" and we add in the token we got where the API specifies (with the help of Axios, or just put in the header in this case),
+        after this we get the return from the API as wanted.
+    </p>
+    <br/>
+
+    <p>To use this in code : Input the Tokens, Keys and usernames and passwords wherever they need to be.
+        <br/>For basic authentication with Axios, we send location we look to get from an a key value pair holder "auth". 
+        <br/>For Key authorisation with Axios, in this case we send the GET request a location we look to get from, and a key value pair holder with query parameters, including the apiKey, in the order the API asks
+        <br/>For token based authorisation with Axious, we add the Bearer token to the headers and send that with the location we look to get from 
+        <br/>All of these are available to look at from the 5.4 Folder Solution.js which makes these calls.   </p>
+    <br/>
+
+    <br />
+    <hr />
+    <h2>28.5 REST API</h2>
+
+    <p>Docummentation on how to use the rest of the REST API requests and items that can be added to 
+        config can be found of the Axious website "https://axios-http.com/docs/intro"
+    </p>
+    <br/>
+
+    <p>Folder 5.4 solution.js has implimentation of each type of request.</p>
+    <br/>
+
+    <p></p>
+    <br/>
+
+    <p></p>
+    <br/>
+
+    <br/>
+    <hr/>
+    <a href="../HTML_Portfolio_Page_Extras/Full_Stack_Index.html"><h2>Return To Index</h2></a>
+</body>
+</html>

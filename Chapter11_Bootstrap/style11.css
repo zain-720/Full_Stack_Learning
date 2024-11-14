@@ -1,0 +1,13 @@
+p {
+    margin: 0px;
+    /*width: 500px add this next time to format better */
+}
+
+.blue {
+    color:blue;
+}
+
+.background {
+    background-color: darkseagreen;
+    border: 2px solid black;
+}

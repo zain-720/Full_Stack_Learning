@@ -1,0 +1,41 @@
+p {
+    margin: 0px;
+}
+
+.blue {
+    color:blue;
+}
+
+
+/*li {
+     get rid of dot before list item list-style: none; 
+}*/
+
+.background {
+    background-color: darkseagreen;
+}
+
+.container {
+    display: flex;
+    gap: 1rem; /* relative size to root element (typically 16px) */
+}
+
+.container2 {
+    display: inline-flex; /* Columns will only be as large as the largest column */
+    flex-direction: column;
+    
+    gap: 1rem; /* relative size to root element (typically 16px) */
+}
+
+.container2 > * { /* Select all direct children of container2 to set their flex-basis (flex basis can only be set on children) */
+    flex-basis: 100px;
+}
+
+.container3 {
+    display: flex;
+    gap: 10px;
+}
+
+.item {
+    width: 100px;
+}

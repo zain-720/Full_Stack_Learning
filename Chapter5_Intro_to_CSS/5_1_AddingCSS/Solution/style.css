@@ -1,3 +1,19 @@
 h1 {
   color: purple;
 }
+
+.green-heading{
+  color: green;
+}
+
+#m-mag{
+  color: magenta;
+}
+
+p[draggable]{
+  color:aqua
+}
+
+#endNote{
+  color:red
+}
