@@ -130,16 +130,332 @@
     </p>
     <img src="./images/Screenshot 2024-11-14 025854.png" alt="Cool Photo" width="450" height="400" />
     <p>Gives output of cool night and blue text or hot day and red text depending on the current hour</p>
+    <img src="./images/Screenshot 2024-11-14 030314.png" alt="Cool Photo" width="450" height="400" />
+    <p>(blue text in the AM hours)</p>
 
 
     <br />
     <hr />
     <h2>36.5 : React components </h2>
     
+    <p>Creating component functions that return html, basically creating custom elements to make coding smaller.</p>
+    <br/>
 
-    <p>Adding CSS styling.</p>
+    <p>So adding this function (CavsText) and then adding it in as a called element will</p> 
+    <img src="./images/Screenshot 2024-11-14 183043.png" alt="Cool Photo" width="450" height="400" />
+    <p>output,</p>
+    <img src="./images/Screenshot 2024-11-14 183350.png" alt="Cool Photo" width="450" height="400" />
+
+    <p><br/> To clear up clutter further we can just move this function to a helper JSX file and import it,</p>
+    <img src="./images/Screenshot 2024-11-14 185941.png" alt="Cool Photo" width="390" height="440" />
+
+    <p><br/> component files con only have 1 function exportable in them per file. </p>
+    <br/>
+    <p>npm install, then npm start to run dev jsx files gotten from the site on VS</p>
+
+
+    <br />
+    <hr />
+    <h2>36.6 : Import, Export and Modules </h2>
+
+
+    <p>You already know how importing and exporting files work</p>
+    <br/>
+
+    <p>To export multiple functions from Helper, in addition to the default export we write 
+        export {} where inside is all the non default exports. <br/>
+        To get those items we do <span class="blue">import Nam, {ext1, ext2} from "./file.jsx"</span> to get the 
+        extra helpers, names of the extras must be extact to what we want. just do {ext1()} to use it. <br/> Or
+        we could just do <span class="blue">import * as Nam from "./file.jsx"</span> to import everything into a object Nam. 
+    </p>
+
+    <br />
+    <hr />
+    <h2>36.7 : React properties</h2>
+
+    <p>How to send items to the functions </p>
+    <br/>
+
+    <p>Ethier just put them into the function like a regular Java function 
+       if we are calling an extra export function, <span class="blue">{CurrentInfo(player, "Los Angeles")}</span> <br/>
+       If we are using the default function then need to do <span class="blue">(Header var=""/)</span></p>, as 
+       well the default function will take in its items from a single object rather than multiple different variables.
+    <img src="./images/Screenshot 2024-11-14 211618.png" alt="Cool Photo" width="430" height="340" />
+    <p>This regular and default function is used in the App like, </p>
+    <img src="./images/Screenshot 2024-11-14 205754.png" alt="Cool Photo" width="430" height="240" />
+    
+    <p><br/> this gives, </p>
+    <img src="./images/Screenshot 2024-11-14 211700.png" alt="Cool Photo" width="430" height="540" />
+
+    <p><br/>So we have now made repeatable inputable HTML.</p>
+
+    <br />
+    <hr />
+    <h2>36.7 : React DevTools</h2>
+
+    <p>Tools to help see where items come from (Using React Developer Tools installed onto chrome).
+        Use these devtools when debugging.
+    </p>
+    <br/>
+
+
+    <br />
+    <hr />
+    <h2>36.8 : Mapping data to components</h2>
+
+    <p>Learning how to loop the JSX default functions to build easier
+    </p>
+    <br/>
+
+    <p><span class="blue">list.map(function)</span> .map is a function which will loop over every element in "list" and run 
+    the function "function" on each.</p>
+    <br/>
+
+    <p>Using this looping, we can turn this section of code </p>
+    <img src="./images/Screenshot 2024-11-14 222012.png" alt="Cool Photo" width="330" height="110" />
+    <p>Into this, as long as we set up the list for it to run on, and each item given as a unique ID under "key" (key does not count as a prop, dev tools will show this). 
+    These both give the same output. We could also jsut diectly add Helper to map if "id" was instead "key"</p>
+    <img src="./images/Screenshot 2024-11-14 223253.png" alt="Cool Photo" width="430" height="290" />
+
+    <p><br/> For non default functions I think you can just run a loop on it with a list, like in java, but that doesnt look clean.</p>
+
+    <br />
+    <hr />
+    <h2>36.9 : Map/Filter/Reduce</h2>
+
+    <p>Going to go through the <span class="blue">.map(function)</span> function in greater detail and look at some of the 
+    related functions that help deal with arrays such as <bt/>
+    .map <br/> .filter <br/> .reduce <br/> .find <br/> .findIndex</p>
+    <br/>
+
+    <p> output = <span class="blue">array.map(func)</span> -Create a new array (if we choose to capture the output) by doing something with each item in an array (using the func given)</p>
+    <br/>
+
+    <p>output = <span class="blue">array.filter(func)</span> -Create a new array by keeping items that return true (everytime the func returns true, the index that got the boolean true return 
+        is added to the output)</p>
+    <br/>
+
+    <p>output = <span class="blue">array.reduce(func)</span> -Accumulate a value by doing something to each item in an array (sum up / combine the items in array given).<br/> 
+    Function should include an variable for accumulation and current number (func(acum, curr)). reduce will make sure these varables are set correctly, 
+    so long as the output from the func in the acumulated value.</p>
+    <br/>
+
+    <p>output = <span class="blue">array.find(func)</span>, finds first instance of an item in the array. Ex : (return num > 10) is 
+    the func given, then output is the first value in the array where the value is greater than 10</p>
+    <br/>
+
+    <p>output = <span class="blue">array.findIndex(func)</span>, finds first instance of an item in the array and returns the index for it. Ex : (return num > 10) is 
+        the func given, then output is the index of the first value in the array where the value is greater than 10</p>
+    <br/>
+
+    
+    <br />
+    <hr />
+    <h2>36.10 : ES6 Arrow Functions</h2>
+
+    <p>Arrow functions/Fat functions are a shorter way of writing a javaScript function. (Next step from anonymous functions)</p>
+    <br/>
+
+    <p>Ex: take the anonymous implimentation for a function map uses,</p>
+    <img src="./images/Screenshot 2024-11-15 180847.png" alt="Cool Photo" width="430" height="190" />
+    <p>This can be made even smaller as an arrow function,</p>
+    <img src="./images/Screenshot 2024-11-15 181021.png" alt="Cool Photo" width="430" height="190" />
+    <p>Could also get rid of the parenthesis around the x since its only 1 variable being used, as well is the code is only one 
+        peice we can get rid of the return and curly brackets, to get inline code that looks like this. </p>
+        <img src="./images/Screenshot 2024-11-15 181639.png" alt="Cool Photo" width="430" height="130" />
+    <p>Much shorter functions are now made, helpful for basic mapping and the like.</p>
+
+    <br />
+    <hr />
+    <h2>36.11 : Conditional rendering with the Ternary Operator & AND Operator
+    </h2>
+
+    <p>Going to add a basic login that shows different React componnents based on some condition. 
+        Basically how we add (if else/ or), plus and statements. Ex, 
+    </p>
+    <img src="./images/Screenshot 2024-11-15 190005.png" alt="Cool Photo" width="440" height="100" />
+    <p>Uses a ternary operation to decide if to display the login function hmtl or the logged text (nested ternary is possible). Below 
+        that it runs && to determine if the hour is below 12 add the text to the HTML.
+    </p>
+    
+    <br />
+    <hr />
+    <h2>36.11 : State in React - Declarative vs. Imperative Programming
+    </h2>
+
+    <p>How to create interactive React apps, to do this we need to understand State.</p>
+    <br/>
+
+    <p>State : Our UI is a function of the state, state changes brought about by the UI cause page changes </p>
+    <br/>
+
+    <p>Declartive programming uses variables (like booleans) to determine the state of an item</p>
+    
+    <p>Imperative doesnt use variables but instead directly changes the properties of the element </p>
+    
+    <br/>
+
+    <p>Declarative uses need to be rerendered in order for the change in the Ex: style property, to be read and acted on. 
+        this takes the use of React Hooks which lets us actively change these state variables for our app. <br/>
+        Ex: The booleans here control the state
+    </p>
+    <img src="./images/Screenshot 2024-11-15 203945.png" alt="Cool Photo" width="450" height="200" />
+    <p>This declarative implimentation would see no active changes since there are no hooks setup to actively change 
+        "isDone" but this is how declarative would look.
+    </p>
+
+
+    <br />
+    <hr />
+    <h2>36.11 : React Hooks - useState
+    </h2>
+
+    <p>Say we had the following buttons which called functions to increase and decrease the value of count.</p>
+    <img src="./images/Screenshot 2024-11-15 205849.png" alt="Cool Photo" width="280" height="100" />
+    <p>Regularly incrementing and decrementing the value of count would not change the displayed value. 
+        To have changes be actively read and rendered we need to use useState, instead of writing a whole new .createRoot
+    </p>
+    <img src="./images/Screenshot 2024-11-15 210121.png" alt="Cool Photo" width="280" height="40" />
+    <p><span class="blue">[count, setCount]</span> will map "count" to index 0 of setState, so it now represents the current value of state, and 
+    "setCount" is mapped to index 1 of setState the function of the state. The 0 in useState() represents the inital value of the state.</p>
+    <p>Can have useState() seperately like this or as React.useState, if we didnt import its function specifically as well.</p>
+    <br/>
+
+    <p>The function we setCount has the ability to actively update count/stateValue, so the following code would actively change the display value,</p>
+    <img src="./images/Screenshot 2024-11-15 211738.png" alt="Cool Photo" width="200" height="140" />
+    <p>Any name can be chosen for the func same with the value variable, anything can be in the fun, as log
+        as the output of it matches the setState value inital type.
+    </p>
+    <br/>
+
+    <p>Now we have an actively updating counter,</p>
+    <img src="./images/Screenshot 2024-11-15 212831.png" alt="Cool Photo" width="250" height="440" />
+    <p>If I wanted say a dynamically updating clock, I would use <span class="blue">setInterval(func, time)</span> to 
+    call a func that would update the value of the state of the clock to the newest time. Ex,</p>
+    <img src="./images/Screenshot 2024-11-15 214924.png" alt="Cool Photo" width="300" height="160" />
+    <p>1000 is in miliseconds.</p>
+
+    <br />
+    <hr />
+    <h2>36.12 : ES6 Object & Array Destructuring
+    </h2>
+
+    <p>This is just how to grab objects from complex arrays and Objects, you know how to do this.</p>
+    <br/>
+
+    <ui>
+        <li>[item1, item2] = array : To take objects of the array (assume the main array only holds 2 objects)</li>
+        <li> {item1, item2} = dict : To take values of key item1, item2 from a dict/Obj structure</li>
+        <li>{item1: newName, item2: newName2} = dict : To change variable names from inital key names </li>
+        <li>{item1="word", item2="word"} = dict : If item1/item2 is undefined use word instead  </li>
+        <li>{item1, itemDict : {item1.1, item2.1}} = dict : To grab variables from a nested obj/dict</li>
+    </ui>
+
+    <p><br/>It's possible to return functions Ex, ( return [1, function() {something}]; )</p>
+
+    <br />
+    <hr />
+    <h2>36.13 : Event Handling in React
+    </h2>
+
+    <p>How to detect when a user interacts with your app or components, and how to use React to render 
+        different things depending on those events.
+    </p>
+    <br/>
+
+    <p>Let's update our login button to change color if we hover over it, so we will change our LoggingDis 
+        to accomidate for dynamic changes,
+    </p>
+    <img src="./images/Screenshot 2024-11-16 005428.png" alt="Cool Photo" width="450" height="490" />
+    <p>LoggingDis was updated, it now includes dynamically changing variables that will update a boolean to 
+        determine the color of the login box depending on if mouse is over it, it also sets text upon button click. 
+        Changed from form to Div beacuse form would instant reset the headingText </p>
+    <img src="./images/Screenshot 2024-11-15 232311.png" alt="Cool Photo" width="450" height="690" />
+
+    <br />
+    <hr />
+    <h2>36.13 : React Forms
+    </h2>
+
+    <p>How to handle events that arise from a things like a login form, like getting user input then using it</p>
+    <br/>
+
+    <p>Will need to add an onChange event on input elements, convert username input to non component version, else its return and build would 
+        have to be much different
+    </p>
+    <img src="./images/Screenshot 2024-11-16 012858.png" alt="Cool Photo" width="580" height="690" />
+    <p>With this, the username is actively displayed above, updated upon every login click, since we only updated the displaying useSate 
+        upon click.</p>
+    <img src="./images/Screenshot 2024-11-16 013430.png" alt="Cool Photo" width="280" height="70" />
+    <p>Reason we use div for these interactive forms over form is that form will auto refresh the page using 
+        onSubmit, need to sue onSubmit to go to a func with event then do even.preventDefault() to block the refresh. </p>
+
+    <br />
+    <hr />
+    <h2>36.14 : Changing Complex State
+    </h2>
+
+    <p><br> First task is being able to put two dynamic string together for display, trivial.</p>
+    <img src="./images/Screenshot 2024-11-16 015305.png" alt="Cool Photo" width="510" height="490" />
+    <p>Just added another input and useState()</p>
+    <br/>
+
+    <p>To simplify this, we can combine the two useState objects into one, by setting the inital state to be an 
+        object holding fName and lName,
+    </p>
+    <img src="./images/Screenshot 2024-11-16 021522.png" alt="Cool Photo" width="510" height="520" />
+    <p>Now states have been combined into an object, prevValue gets the previous value of the useState. If we 
+        dont update all at the same time, parts of the dict will be overwrote and lost. Also dont use event within a useState 
+        set function, it will cause an error sometimes.
+    </p>
+
+    <br />
+    <hr />
+    <h2>36.15 : Spread Operator
+    </h2>
+
+    <p>Used to instert an object into another object without nested the object.</p>
+    <br/>
+    <p>Done with <span class="blue">...object</span> to indicate this object is being spread and added, instead of being 
+    added/used and a single object.</p>
+    <p>Ex: using Spread to build list </p>
+    <img src="./images/Screenshot 2024-11-16 025036.png" alt="Cool Photo" width="410" height="420" />
+    <p>Ex2: using Spread to update first/last name and email</p>
+    <img src="./images/Screenshot 2024-11-16 025149.png" alt="Cool Photo" width="310" height="600" />
+    <p>To add keys which are represented by variables to a useState variable do [keyname] adding list brackets around it.</p>
+    
+
+    <br />
+    <hr />
+    <h2>36.16 : Managing a component tree
+    </h2>
+
+    <p>How to pass states/state work with eachother between components</p>
+    <br/>
+
+    <p>Using this we will move our login useStates to the login component to compartmentalize our code better.</p>
     <br/>
     
+    <p>Along side that we moved our fullname display to a sperate componenet as well, this was just sending an element into props 
+        to be read so that was simple.
+    </p>
+    <img src="./images/Screenshot 2024-11-16 153955.png" alt="Cool Photo" width="310" height="200" />
+    
+    <p><br/>Now lets add state inside our fullNameU component to cross out the fullname with clicked on and uncross it out.</p>
+    <img src="./images/Screenshot 2024-11-16 155332.png" alt="Cool Photo" width="490" height="390" />
+
+    <p><br/>How to affect items in parent from a component the parent calls. To do this we can pass in setState functions 
+    to the child, allowing it to modify a dynamic variable in a parent. For example we will add a useState that keeps count of the number of strike through 
+    clicks and prints out the total number. To do this we need to give it the useState func for the count.</p>
+    <img src="./images/Screenshot 2024-11-16 160351.png" alt="Cool Photo" width="490" height="190" />
+    <p>strike count gets its value changed in fullNameU,</p>
+    <img src="./images/Screenshot 2024-11-16 160519.png" alt="Cool Photo" width="570" height="390" />
+    
+    <p>Here is an importable UI Material UI for later styling,</p>   
+    <a href="https://mui.com/material-ui/icons/"><h4>Material UI</h4></a>
+    
+
+    <a href="mailto:mcs-it-utm-l@listserv.utoronto.ca">mcs-it-utm-l@listserv.utoronto.ca</a>
 
     <br/>
     <hr/>
