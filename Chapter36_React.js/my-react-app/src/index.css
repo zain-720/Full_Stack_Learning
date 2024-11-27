@@ -12,6 +12,10 @@ li{
   color:blue;
 }
 
+.purple {
+  color:purple;
+}
+
 /* edit all h1 elements */
 h1{ 
   color: goldenrod;
